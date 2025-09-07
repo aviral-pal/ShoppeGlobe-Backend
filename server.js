@@ -30,7 +30,7 @@ app.use(express.json());
 
 // Establish a connection to MongoDB using the URI stored in environment variables
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(process.env.MONGO_URI)
   .then(() => console.log('✅ MongoDB connection established'))
   .catch((err) => console.error('❌ Failed to connect to MongoDB:', err));
 
