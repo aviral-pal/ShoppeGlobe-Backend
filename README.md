@@ -1,3 +1,5 @@
+
+````markdown
 # 🛒 ShoppeGlobe Backend
 
 ShoppeGlobe is a backend API for an e-commerce platform, developed with **Node.js**, **Express.js**, and **MongoDB**.  
@@ -48,75 +50,93 @@ The API is designed for **scalability**, **security**, and **ease of integration
 ```bash
 git clone https://github.com/aviral-pal/ShoppeGlobe-Backend.git
 cd ShoppeGlobe-Backend
-2. Install Dependencies
-bash
-Copy code
-npm install
-3. Setup Environment Variables
-Create a .env file in the root directory:
+````
 
-bash
-Copy code
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Setup Environment Variables
+
+Create a `.env` file in the root directory:
+
+```bash
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/shoppyglobe
 JWT_SECRET=your_jwt_secret_here
-4. Set up MongoDB
-Install MongoDB Community Edition and Compass.
+```
 
-Run MongoDB locally:
+### 4. Set up MongoDB
 
-bash
-Copy code
-mongod
-Connect in Compass with:
+* Install [MongoDB Community Edition](https://www.mongodb.com/try/download/community) and [Compass](https://www.mongodb.com/products/compass).
+* Run MongoDB locally:
 
-bash
-Copy code
-mongodb://localhost:27017/shoppyglobe
-The shoppyglobe database will be created automatically on app start.
+  ```bash
+  mongod
+  ```
+* Connect in Compass with:
 
-💻 Development Commands
-Start server with nodemon (auto-reload):
+  ```
+  mongodb://localhost:27017/shoppyglobe
+  ```
 
-bash
-Copy code
-npm run dev
+The `shoppyglobe` database will be created automatically on app start.
+
+---
+
+## 💻 Development Commands
+
+Start server with **nodemon** (auto-reload):
+
+```bash
+npm start
+```
+
 (Optional) Seed product data:
 
-bash
-Copy code
+```bash
 npm run import:products
-🚀 Production Commands
+```
+
+---
+
+## 🚀 Production Commands
+
 Start server in production mode:
 
-bash
-Copy code
+```bash
 npm start
-🔌 API Endpoints
-Auth
-POST /register – Register new user
+```
 
-POST /login – Login and return JWT
+---
 
-Products
-GET /products – Get all products
+## 🔌 API Endpoints
 
-GET /products/:id – Get product by ID
+### Auth
 
-POST /products – Add product (Admin/Protected)
+* `POST /register` – Register new user
+* `POST /login` – Login and return JWT
 
-Cart (Protected Routes)
-GET /cart – Get user’s cart
+### Products
 
-POST /cart – Add product to cart
+* `GET /products` – Get all products
+* `GET /products/:id` – Get product by ID
+* `POST /products` – Add product (Admin/Protected)
 
-PUT /cart/:productId – Update cart item quantity
+### Cart (Protected Routes)
 
-DELETE /cart/:productId – Remove product from cart
+* `GET /cart` – Get user’s cart
+* `POST /cart` – Add product to cart
+* `PUT /cart/:productId` – Update cart item quantity
+* `DELETE /cart/:productId` – Remove product from cart
 
-📁 Folder Structure
-bash
-Copy code
+---
+
+## 📁 Folder Structure
+
+```
 ShoppeGlobe-Backend/
 │
 ├── config/
@@ -148,27 +168,36 @@ ShoppeGlobe-Backend/
 ├── importProducts.js      # Product seeder script
 ├── package.json
 └── .env
-📬 Sample Requests
-🔐 Register User
-json
-Copy code
+```
+
+---
+
+## 📬 Sample Requests
+
+### 🔐 Register User
+
+```json
 POST /register
 {
   "name": "John Doe",
   "email": "john@example.com",
   "password": "password123"
 }
-🔐 Login User
-json
-Copy code
+```
+
+### 🔐 Login User
+
+```json
 POST /login
 {
   "email": "john@example.com",
   "password": "password123"
 }
-🛒 Add Product to Cart
-json
-Copy code
+```
+
+### 🛒 Add Product to Cart
+
+```json
 POST /cart
 Authorization: Bearer <token>
 
@@ -176,23 +205,29 @@ Authorization: Bearer <token>
   "productId": "PRODUCT_ID_HERE",
   "quantity": 2
 }
-🛒 Update Cart Item
-json
-Copy code
+```
+
+### 🛒 Update Cart Item
+
+```json
 PUT /cart/:productId
 Authorization: Bearer <token>
 
 {
   "quantity": 3
 }
-❌ Remove Product from Cart
-json
-Copy code
+```
+
+### ❌ Remove Product from Cart
+
+```json
 DELETE /cart/:productId
 Authorization: Bearer <token>
-➕ Create Product
-json
-Copy code
+```
+
+### ➕ Create Product
+
+```json
 POST /products
 {
   "title": "Cool Gadget",
@@ -201,7 +236,16 @@ POST /products
   "stock": 50,
   "category": "gadgets"
 }
-⚠️ Note: Run npm start import:products before testing APIs if you want dummy product data.
+```
 
-✍️ Author: Aviral Pal
-📧 Email: aviralpal31@gmail.com
+---
+
+⚠️ **Note:** Run `npm run import:products` before testing APIs if you want dummy product data.
+
+---
+
+✍️ **Author**: [Aviral Pal](https://github.com/aviral-pal)
+📧 **Email**: [aviralpal31@gmail.com](mailto:aviralpal31@gmail.com)
+
+
+---
